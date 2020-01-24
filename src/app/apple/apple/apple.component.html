@@ -1,0 +1,4 @@
+<ng-container *ngIf="(apples$ | async) as apples">
+    <p *ngFor="let a of apples">{{a | json }}</p>
+    <p *ngFor="let a of apples">{{a.variety}} {{a.isWashed}} {{a.color}} {{a.id}} {{a.state}}</p>
+</ng-container>

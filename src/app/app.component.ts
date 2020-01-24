@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fruit-app';
+  opened = true; 
+  extend = false;
+  constructor(){};
+  
+  onToggle() {
+    this.opened = !this.opened;
+   }
+  onToggleExtend() {
+    this.extend = !this.extend;
+   }
 }

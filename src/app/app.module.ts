@@ -11,7 +11,6 @@ import { AppEffects } from './app.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { MaterialModule } from './material/material.module';
-import { AppStoreModule } from './store/app-store.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { AppStoreModule } from './store/app-store.module';
     HttpClientModule,
     CoreModule,
     MaterialModule,
-    AppStoreModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'bananas'},
   {path: 'bananas', loadChildren: () => import('./banana/banana.module').then(m => m.BananaModule)},
-  {path: 'apple', loadChildren: () => import('./apple/apple.module').then(m => m.AppleModule)}
+  {path: 'apples', loadChildren: () => import('./apple/apple.module').then(m => m.AppleModule)}
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromAppStore from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { BananaEffects } from './effects/banana.effects';
+import { AppleEffects } from './effects/apple.effects';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { BananaEffects } from './effects/banana.effects';
   imports: [
     CommonModule,
     StoreModule.forFeature(fromAppStore.appStoreFeatureKey, fromAppStore.reducers),
-    EffectsModule.forFeature([BananaEffects]),
+    EffectsModule.forFeature([BananaEffects, AppleEffects]),
 
   ]
 })

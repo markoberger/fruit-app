@@ -14,7 +14,7 @@ import {BananaActions} from '../../app-store/actions';
 export class BananaComponent implements OnInit {
   bananas$: Observable<(Banana & Artikl)[]>;
   loading$: Observable<boolean>;
-  constructor(private bananaService: BananaTestService, private store: Store<fromAppStore.State>) {
+  constructor(private store: Store<fromAppStore.State>) {
     // this.bananas$ = this.bananaService.getBananas();
     this.bananas$ = this.store.pipe(select(fromAppStore.selectBananaList));
     this.loading$ = this.store.pipe(select(fromAppStore.selectBananaListLoading));

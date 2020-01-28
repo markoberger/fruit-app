@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "fruit-app"
+  "defaultProject": "fruit-app",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

@@ -21,6 +21,6 @@ export class AppleComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.store.dispatch(AppleActions.loadApples());  
+    this.store.dispatch(AppleActions.loadApples());
   }
 }

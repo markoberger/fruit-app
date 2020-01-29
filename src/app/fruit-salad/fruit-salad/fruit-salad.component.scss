@@ -62,3 +62,16 @@
     border-radius: 4px;
     overflow: hidden;
 }
+.container-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h2{
+        margin: 0;
+        padding: 1rem 0;
+        
+    }
+}
+.separator{
+    flex-grow: 2;
+}

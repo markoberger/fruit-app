@@ -16,8 +16,7 @@ export class AppleEffects {
     /** An EMPTY observable only emits completion. Replace with your own observable stream */
     mergeMap(() => this.appleService.getApples().pipe(
       map((apples: (Apple & Artikl)[]) => AppleActions.loadApplesSuccess({apples}))
-    ))
-    )
+    )))
     );
 
   constructor(

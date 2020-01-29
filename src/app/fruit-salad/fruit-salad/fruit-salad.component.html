@@ -1,12 +1,29 @@
 <div cdkDropListGroup>
     <div class="list_container">
-        <h2>Ingredients</h2>
-        <div id="master-list" cdkDropList [cdkDropListData]="ingredients" class="list" (cdkDropListDropped)="drop($event)">
-            <div class="list_box" *ngFor="let item of ingredients" cdkDrag > {{item}}</div>
+        <div class="container-header">
+            <h2>Ingredients</h2>
+        </div>
+        <div 
+            *ngIf="(ingredients$ | async) as ingredients"
+            id="master-list" 
+            cdkDropList 
+            [cdkDropListData]="ingredients" 
+            class="list" 
+            (cdkDropListDropped)="drop($event)">
+            <div 
+                class="list_box" 
+                *ngFor="let item of ingredients" 
+                cdkDrag > {{item.title}}</div>
         </div>
     </div>
     <div class="horizontal_list_container">
-        <h2>Salad <button mat-icon-button (click)="onAddLayer()"><mat-icon>add</mat-icon></button></h2>
+        <div class="container-header">
+            <h2>Salad </h2>
+            <div class="separator"></div>
+            <button mat-icon-button (click)="onAddLayer()"><mat-icon>add</mat-icon></button>
+            <button mat-icon-button color="warn" (click)="onClear()"><mat-icon>clear</mat-icon></button>
+            <button mat-icon-button color="primary" (click)="onSave()"><mat-icon>save</mat-icon></button>
+        </div>
         
         <div *ngFor="let layer of salad; let i=index"
             cdkDropList
@@ -15,7 +32,10 @@
             [cdkDropListData]="layer" 
             class="horizontal-list" 
             (cdkDropListDropped)="drop($event)">
-            <div class="horizontal_list_box" *ngFor="let item of layer" cdkDrag > {{item}}</div>
+            <div 
+                class="horizontal_list_box" 
+                *ngFor="let item of layer" 
+                cdkDrag > {{item.title}}</div>
         </div>
     </div>
 </div>

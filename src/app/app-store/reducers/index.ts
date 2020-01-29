@@ -69,4 +69,13 @@ export const selectAppleListLoading = createSelector(
   fromApple.getLoading
 );
 
+// ------- SELECTORS JOIN --------
+
+export const selectAppleBananaList = createSelector(
+  selectBananaState,
+  selectAppleState,
+  ( bananas, apples) => [ ...bananas.bananas, ...apples.apples] 
+
+)
+
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

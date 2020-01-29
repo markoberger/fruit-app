@@ -15,8 +15,7 @@ export class BananaEffects {
     /** An EMPTY observable only emits completion. Replace with your own observable stream */
     mergeMap(() => this.bananaService.getBananas().pipe(
       map((bananas: (Banana & Artikl)[]) => BananaActions.loadBananasSuccess({bananas}))
-    ))
-    )
+    )))
   );
 
   constructor(

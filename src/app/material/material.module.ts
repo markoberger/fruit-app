@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
@@ -12,13 +13,15 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule,
-    DragDropModule
+    DragDropModule,
+    MatIconModule
   ],
   exports: [
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule,
-    DragDropModule
+    DragDropModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }

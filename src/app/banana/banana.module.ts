@@ -10,7 +10,7 @@ import { BananaComponent } from './banana/banana.component';
   declarations: [BananaComponent],
   imports: [
     CommonModule,
-    BananaRoutingModule
+    BananaRoutingModule,
   ]
 })
 export class BananaModule { }

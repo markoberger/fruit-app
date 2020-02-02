@@ -11,6 +11,7 @@ import { environment } from '../../../environments/environment';
 
 import * as fromBanana from './banana.reducer';
 import * as fromApple from './apple.reducer';
+import * as fromFruitSalad from './fruit-salad.reducer';
 import * as fromRoot from '../../reducers';
 
 export const appStoreFeatureKey = 'appStore';
@@ -18,6 +19,7 @@ export const appStoreFeatureKey = 'appStore';
 export interface AppState {
   [fromBanana.bananaFeatureKey]: fromBanana.BananaState;
   [fromApple.appleFeatureKey]: fromApple.AppleState;
+  [fromFruitSalad.fruitSaladFeatureKey]: fromFruitSalad.FruitSaladState;
 }
 
 export interface State extends fromRoot.State {
@@ -28,7 +30,8 @@ export interface State extends fromRoot.State {
 export function reducers(state: AppState | undefined, action: Action) {
   return combineReducers({
     [fromBanana.bananaFeatureKey]: fromBanana.reducer,
-    [fromApple.appleFeatureKey]: fromApple.reducer
+    [fromApple.appleFeatureKey]: fromApple.reducer,
+    [fromFruitSalad.fruitSaladFeatureKey]: fromFruitSalad.reducer
   })(state, action);
 }
 
@@ -57,25 +60,26 @@ export const selectBananaListLoading = createSelector(
 export const selectAppleState = createSelector(
   selectAppState,
   (state: AppState) => state.apple
-);
+  );
 
 export const selectAppleList = createSelector(
-  selectAppleState,
-  fromApple.getApples
-);
+    selectAppleState,
+    fromApple.getApples
+    );
 
 export const selectAppleListLoading = createSelector(
-  selectAppleState,
-  fromApple.getLoading
-);
+      selectAppleState,
+      fromApple.getLoading
+      );
 
 // ------- SELECTORS JOIN --------
 
 export const selectAppleBananaList = createSelector(
-  selectBananaState,
-  selectAppleState,
-  ( bananas, apples) => [ ...bananas.bananas, ...apples.apples] 
+        selectBananaState,
+        selectAppleState,
+        ( bananas, apples) => [ ...bananas.bananas, ...apples.apples]
 
-)
+        );
 
+// ------- SELECTORS FRUIT SALAD--------
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
